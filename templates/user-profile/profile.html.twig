@@ -1,0 +1,23 @@
+{% extends 'base.html.twig'%}
+
+{% block title  %}Profile & User Data{%endblock %}
+
+{% block body %}
+	<h1 class="text-center text-purple-600 text-2xl">
+		Show User & Profile Data
+	</h1>
+	<div class="flex flex-col min-h-screen gap-6 mx-auto my-4  max-w-3xl border bg-blue-400 text-white text-lg border-purple-600 border-2 items-center">
+		{% for user in users %}
+			<div class="text-base text-white">
+				{{user.username}}
+			</div>
+			<div class="text-base text-white">
+				{{user.email}}
+			</div>
+
+			<div class="text-base text-white">{{user.password}}</div>
+		{% endfor %}
+	</div>
+
+
+{% endblock %}

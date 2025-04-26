@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Passing data from controller to view!
+{% endblock %}
+
+{% block body %}
+	<div class='flex justify-center items-center my-10'>
+		<table cellpadding='6' class="table-auto border border-4 border-blue-600">
+			<thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
+				<tr>
+					<th scope="col" class="px-4 py-3">Product_name</th>
+					<th scope="col" class="px-4 py-3">Product_type</th>
+					<th scope="col" class="px-4 py-3">product_price</th>
+				</tr>
+				<tr>
+					{% for product in products %}
+
+
+						<td scope='row' class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{product.name}}</td>
+						<td scope='row' class=" px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{product.Type}}</td>
+						<td scope='row' class="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">{{product.price}}</td>
+					</tr>
+				{% endfor %}
+			</thead>
+		</table>
+	</div>
+{% endblock %}

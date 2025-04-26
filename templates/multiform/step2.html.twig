@@ -1,0 +1,30 @@
+{% extends 'base.html.twig' %}
+
+
+{% block title %}
+	multi-step-form
+{% endblock %}
+
+
+{% block body %}
+	<h1 class="text-2xl text-purple-600 text-center mt-10 font-bold">Registeration Form</h1>
+	<div class="flex  item-center gap-6 mt-10 justify-center">
+		{{form_start(form)}}
+		<div class="text-red-500">
+			{{form_errors(form)}}
+		</div>
+		<div class="mb-4">
+			{{form_widget(form.address)}}
+			{{form_errors(form.address)}}
+		</div>
+		<div class="mb-4">
+			{{form_widget(form.phone_number)}}
+			{{form_errors(form.phone_number)}}
+		</div>
+		<button class="bg-purple-500 text-white font-bold px-4 py-2 text-lg rounded-2xl cursor-pointer hover:bg-blue-400 outline-none border-none" type="submit">submit</button>
+	</div>
+
+
+	{{form_end(form)}}
+
+{% endblock %}

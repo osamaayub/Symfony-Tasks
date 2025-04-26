@@ -1,0 +1,22 @@
+{% extends 'base.html.twig'%}
+
+
+
+{% block title %}Adding Todo Form{% endblock %}
+
+
+
+
+{% block body %}
+
+<div class="text-center mt-10">
+<h2 class="text-2xl text-center text-blue-600 font-bold">Adding tasks</h2>
+</div>
+
+{{ form_start(form) }}
+
+{{form_widget(form)}}
+<button type="submit" class="bg-blue-400 text-white px-2 py-2 rounded">Add Tasks <button>
+{{form_end(form)}}
+
+{% endblock %}

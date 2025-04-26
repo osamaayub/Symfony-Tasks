@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Todo List</title>
+</head>
+<body>
+    <h1>My Todo List</h1>
+
+    {% if tasks is not empty %}
+        <ul>
+            {% for task in tasks %}
+                <li>
+                    {{ task.title }}
+                    <a href="/todo/task/delete/{{ task.id }}">🗑 Delete</a>
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No tasks available.</p>
+    {% endif %}
+
+    <p>
+        <a href="/todo/add">➕ Add New Task</a>
+    </p>
+
+    <p>
+        <a href="/todo/clear">🧹 Clear All Tasks</a>
+    </p>
+</body>
+</html>

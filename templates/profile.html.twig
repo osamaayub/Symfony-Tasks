@@ -1,0 +1,26 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="mt-10 flex justify-center items-center text-2xl font-bold">
+	<h1>User Profile Creation</h1>
+	</div>
+  
+   <div class="flex flex-col items-center mt-10 gap-8">
+	{{form_start(form)}}
+	<div class="bg-red-500">
+		{{form_errors(form)}}
+	</div>
+	<div class="mb-6">
+		{{form_widget(form.firstname)}}
+		{{form_errors(form.firstname)}}
+	</div>
+	<div class="mb-6">
+		{{form_widget(form.lastname)}}
+		{{form_errors(form.lastname)}}
+	</div>
+	<button class="cursor-pointer text-lg bg-purple-500 text-white hover:text-purple-400 px-4 py-2 rounded-2xl" type="submit">
+      Create Profile
+    </button>
+	{{form_end(form)}}
+   </div>
+{% endblock %}

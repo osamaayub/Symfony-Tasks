@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+
+{% block body %}
+
+	<h1 class="sm:text-base text-3xl text-center pb-12">
+		Confirmation Page
+	</h1>
+     <div class="flex flex-col text-lg font-bold items-center text-blue-600">
+	<h2>Name:{{name}}</h2>
+	<p>Email:{{email}}</p>
+	<p>Message:{{message}}</p>
+     </div>
+
+
+{% endblock %}

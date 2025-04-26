@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+	<div class="w-4/5 p-8 m-auto pt-40">
+		<h1 class="sm:text-base text-3xl text-center pb-12">
+			Calculator Result
+		</h1>
+
+		{{ form_start(calculatorForm) }}
+
+		{# Global form errors (e.g. CSRF) #}
+		<div class="text-red-600 font-semibold mb-4">
+			{{ form_errors(calculatorForm) }}
+		</div>
+
+		<div class="mb-6">
+			{{ form_widget(calculatorForm.number1) }}
+			<p class="text-red-500 text-sm mt-2">{{ form_errors(calculatorForm.number1) }}</p>
+
+		</div>
+
+		<div class="mb-6">
+			{{ form_widget(calculatorForm.number2) }}
+			<p class="text-red-500 text-sm mt-2">{{ form_errors(calculatorForm.number2) }}</p>
+		</div>
+
+		<div class="mb-6">
+			{{ form_widget(calculatorForm.operator) }}
+    <p class="text-red-500 text-sm mt-2">{{ form_errors(calculatorForm.operator) }}</p>
+		</div>
+	
+		<button type="submit" class="uppercase mt-8 bg-blue-400 text-lg font-extrabold py-4 px-8 rounded-3xl hover:bg-blue-500 transition">
+			Calculate Result
+		</button>
+    {% if result is defined %}
+    <div>
+    Result:{{result}}
+    </div>
+    {% endif %}
+
+		{{ form_end(calculatorForm) }}
+	</div>
+{% endblock %}
